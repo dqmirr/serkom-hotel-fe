@@ -64,7 +64,7 @@ export default () => {
       formData.append("durasi", durasi.current.value)
       formData.append("total", total)
 
-      response = await axios.post(`${baseUrl}/booking/create`, formData);
+      response = await axios.post(`/create`, formData);
       // console.log('response data', response.data)
     } catch (error) {
       console.log("response data", response);
