@@ -4,7 +4,6 @@ import axios from 'axios'
 import { useRef, useState } from 'react'
 
 export default () => {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_BASE_URL;
 
   const [jenisKelamin, setJenisKelamin] = useState('')
   const [tipeKamar, setTipeKamar] = useState('')
@@ -64,10 +63,8 @@ export default () => {
       formData.append("durasi", durasi.current.value)
       formData.append("total", total)
 
-      response = await axios.post(`/create`, formData);
-      // console.log('response data', response.data)
+      response = await axios.post(`/booking/create`, formData);
     } catch (error) {
-      console.log("response data", response);
       console.error(error)
     }
   }
